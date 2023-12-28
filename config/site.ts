@@ -3,8 +3,8 @@ export interface SiteConfig {
   description: string;
   currentlyAt: string;
   socialLinks: {
-    github: string;
     website: string;
+    github: string;
     linkedin: string;
   };
 }
@@ -15,9 +15,9 @@ const siteConfig: SiteConfig = {
     "A minimal and lovely travel blog which shares experiences and citiest around the world!",
   currentlyAt: "Istanbul",
   socialLinks: {
-    github: "//github.com/cagkancaglar",
     website: "//cagkancaglar.com",
-    linkedin: "//linkedin.com/cagkancaglar",
+    github: "//github.com/cagkancaglar",
+    linkedin: "//linkedin.com/in/çağkan-çağlar-80375617b",
   },
 };
 
