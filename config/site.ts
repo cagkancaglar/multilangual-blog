@@ -9,10 +9,10 @@ export interface SiteConfig {
   };
 }
 
-const siteConfig = {
+const siteConfig: SiteConfig = {
   siteName: "Explorer",
   description:
-    "A minimal and lovely travel  blog which shares experiences and citiest around the world!",
+    "A minimal and lovely travel blog which shares experiences and citiest around the world!",
   currentlyAt: "Istanbul",
   socialLinks: {
     github: "//github.com/cagkancaglar",
