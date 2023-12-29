@@ -1,6 +1,7 @@
 import { Post } from "../types/collection";
 import Link from "next/link";
 import Image from "next/image";
+import PostContent from "./PostContent";
 
 interface PostProps {
   post: Post;
@@ -8,11 +9,21 @@ interface PostProps {
 
 const PostCard = ({ post }: PostProps) => {
   return (
-    <Link className="grid grid-cols-2 gap-10" href={`/post/${post.slug}`}>
+    <Link
+      className="grid grid-cols-2 gap-10 items-center"
+      href={`/post/${post.slug}`}
+    >
       {/* image */}
-      <Image src={post.image} width={600} height={300} alt={post.title} priority />
+      <Image
+        className="rounded-md w-full object-cover object-center max-h-[300px]"
+        src={post.image}
+        width={600}
+        height={300}
+        alt={post.title}
+        priority
+      />
       {/* content */}
-      <div>{post.title}</div>
+      <PostContent post={post} />
     </Link>
   );
 };
