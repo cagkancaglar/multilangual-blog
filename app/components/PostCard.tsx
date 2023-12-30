@@ -5,26 +5,33 @@ import PostContent from "./PostContent";
 
 interface PostProps {
   post: Post;
+  layout?: "vertical" | "horizontal";
 }
 
-const PostCard = ({ post }: PostProps) => {
+const PostCard = ({ post, layout = "horizontal" }: PostProps) => {
   return (
-    <Link
-      className="grid grid-cols-2 gap-10 items-center"
-      href={`/post/${post.slug}`}
-    >
-      {/* image */}
-      <Image
-        className="rounded-md w-full object-cover object-center max-h-[300px]"
-        src={post.image}
-        width={600}
-        height={300}
-        alt={post.title}
-        priority
-      />
-      {/* content */}
-      <PostContent post={post} />
-    </Link>
+    <div>
+      <Link
+        className={`${
+          layout === "horizontal"
+            ? "grid grid-cols-2 gap-10 items-center"
+            : "space-y-2"
+        }`}
+        href={`/post/${post.slug}`}
+      >
+        {/* image */}
+        <Image
+          className="rounded-md w-full object-cover object-center max-h-[300px]"
+          src={post.image}
+          width={600}
+          height={300}
+          alt={post.title}
+          priority
+        />
+        {/* content */}
+        <PostContent post={post} />
+      </Link>
+    </div>
   );
 };
 
