@@ -12,6 +12,11 @@ export default function Home() {
           posts={MOCK_POSTS.filter((_, i) => i > 0 && i < 3)}
           layout="vertical"
         />
+        <PostCard post={MOCK_POSTS[3]} reverse />
+        <PostList
+          posts={MOCK_POSTS.filter((_, i) => i > 3 && i < 6)}
+          layout="vertical"
+        />
       </main>
     </PaddingContainer>
   );
