@@ -10,7 +10,7 @@ const PostContent = ({ post }: PostContentProps) => {
   return (
     <div className="space-y-2">
       {/* tags */}
-      <div className="flex items-center text-sm gap-2 text-neutral-400">
+      <div className="flex items-center text-sm gap-2 text-neutral-400 whitespace-nowrap">
         <div
           className={`font medium ${
             post.category.title === "Cities"
@@ -28,9 +28,13 @@ const PostContent = ({ post }: PostContentProps) => {
         <div>{getRelativeDate(post.date_created)}</div>
       </div>
       {/* title */}
-      <h2 className="font-medium text-3xl">{post.title}</h2>
+      <h2 className="text-xl @md:text-2xl @lg:text-3xl font-medium">
+        {post.title}
+      </h2>
       {/* description */}
-      <p className="leading-snug text-neutral-600">{post.description}</p>
+      <p className="text-base @lg:text-lg leading-snug text-neutral-600">
+        {post.description}
+      </p>
       {/* read more */}
       <div className="flex items-center gap-2 pt-3">
         Read more <ArrowRight size={14} />

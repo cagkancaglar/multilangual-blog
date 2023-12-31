@@ -13,9 +13,9 @@ const PostCard = ({ post, layout = "horizontal", reverse }: PostProps) => {
   return (
     <div>
       <Link
-        className={`${
+        className={`@container ${
           layout === "horizontal"
-            ? "grid grid-cols-2 gap-10 items-center"
+            ? "grid md:grid-cols-2 gap-10 items-center"
             : "space-y-2"
         }`}
         href={`/post/${post.slug}`}
@@ -23,7 +23,7 @@ const PostCard = ({ post, layout = "horizontal", reverse }: PostProps) => {
         {/* image */}
         <Image
           className={`rounded-md w-full object-cover object-center max-h-[300px] ${
-            reverse ? "order-last" : ""
+            reverse ? "md:order-last" : ""
           }`}
           src={post.image}
           width={600}
