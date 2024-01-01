@@ -4,13 +4,18 @@ import { getReadingTime, getRelativeDate } from "../lib/helper";
 
 interface PostContentProps {
   post: Post;
+  isPostDetailPage?: boolean;
 }
 
-const PostContent = ({ post }: PostContentProps) => {
+const PostContent = ({ post, isPostDetailPage = false }: PostContentProps) => {
   return (
     <div className="space-y-2">
       {/* tags */}
-      <div className="flex items-center text-xs @md:text-sm gap-2 text-neutral-400 whitespace-nowrap">
+      <div
+        className={`flex items-center gap-2 text-neutral-400 whitespace-nowrap ${
+          isPostDetailPage ? "text-sm" : "text-xs @md:text-sm"
+        }`}
+      >
         <div
           className={`font medium ${
             post.category.title === "Cities"
@@ -28,7 +33,13 @@ const PostContent = ({ post }: PostContentProps) => {
         <div>{getRelativeDate(post.date_created)}</div>
       </div>
       {/* title */}
-      <h2 className="text-xl @md:text-2xl @lg:text-3xl font-medium">
+      <h2
+        className={`${
+          isPostDetailPage
+            ? "text-2xl md:text-3xl lg:text-4xl font-bold"
+            : "text-xl @md:text-2xl @lg:text-3xl font-medium"
+        }`}
+      >
         {post.title}
       </h2>
       {/* description */}
@@ -36,9 +47,11 @@ const PostContent = ({ post }: PostContentProps) => {
         {post.description}
       </p>
       {/* read more */}
-      <div className="flex items-center gap-2 pt-3">
-        Read more <ArrowRight size={14} />
-      </div>
+      {!isPostDetailPage && (
+        <div className="flex items-center gap-2 pt-3">
+          Read more <ArrowRight size={14} />
+        </div>
+      )}
     </div>
   );
 };
