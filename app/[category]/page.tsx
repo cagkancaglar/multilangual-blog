@@ -1,3 +1,5 @@
+import PaddingContainer from "../components/PaddingContainer";
+import PostList from "../components/PostList";
 import { MOCK_CATEGORIES, MOCK_POSTS } from "../mock/posts";
 
 export const generateStaticParams = async () => {
@@ -12,7 +14,11 @@ const Page = ({ params }: { params: { category: string } }) => {
   const posts = MOCK_POSTS.filter(
     (post) => post.category.title.toLocaleLowerCase() === params.category
   );
-  return <div>{JSON.stringify(posts)}</div>;
+  return (
+    <PaddingContainer>
+      <PostList posts={posts} />
+    </PaddingContainer>
+  );
 };
 
 export default Page;

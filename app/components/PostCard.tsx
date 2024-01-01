@@ -22,7 +22,7 @@ const PostCard = ({ post, layout = "horizontal", reverse }: PostProps) => {
       >
         {/* image */}
         <Image
-          className={`rounded-md w-full object-cover object-center max-h-[300px] ${
+          className={`rounded-md w-full object-cover object-center max-h-[300px] h-full ${
             reverse ? "md:order-last" : ""
           }`}
           src={post.image}
