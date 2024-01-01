@@ -8,7 +8,7 @@ interface PostHeroProps {
 
 const PostHero = ({ post }: PostHeroProps) => {
   return (
-    <div>
+    <div className="py-10">
       <PostContent post={post} isPostDetailPage />
       <Image
         src={post.image}

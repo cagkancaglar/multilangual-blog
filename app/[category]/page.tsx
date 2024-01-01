@@ -16,7 +16,7 @@ const Page = ({ params }: { params: { category: string } }) => {
   );
   return (
     <PaddingContainer>
-      <PostList posts={posts} />
+        <PostList posts={posts} />
     </PaddingContainer>
   );
 };

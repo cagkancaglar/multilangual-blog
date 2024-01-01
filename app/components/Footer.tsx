@@ -1,7 +1,7 @@
 import siteConfig from "@/config/site";
 import PaddingContainer from "./PaddingContainer";
 import Link from "next/link";
-import SocialLinks from "./SocialLinks";
+import SocialLink from "./SocialLink";
 
 const Footer = () => {
   return (
@@ -18,15 +18,15 @@ const Footer = () => {
           <div>
             <div className="text-lg font-medium">#exploretheworld</div>
             <div className="flex items-center gap-x-2 mt-2 text-neutral-600">
-              <SocialLinks
+              <SocialLink
                 platform="website"
                 link={siteConfig.socialLinks.website}
               />
-              <SocialLinks
+              <SocialLink
                 platform="github"
                 link={siteConfig.socialLinks.github}
               />
-              <SocialLinks
+              <SocialLink
                 platform="linkedin"
                 link={siteConfig.socialLinks.linkedin}
               />
