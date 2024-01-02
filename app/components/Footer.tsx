@@ -5,7 +5,7 @@ import SocialLink from "./SocialLink";
 
 const Footer = () => {
   return (
-    <div className="py-8 border-t">
+    <div className="py-8 border-t mt-10">
       <PaddingContainer>
         <div>
           <h2 className="text-3xl font-bold">{siteConfig.siteName}</h2>
