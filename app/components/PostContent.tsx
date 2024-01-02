@@ -12,7 +12,7 @@ const PostContent = ({ post, isPostDetailPage = false }: PostContentProps) => {
     <div className="space-y-2">
       {/* tags */}
       <div
-        className={`flex items-center gap-2 text-neutral-400 whitespace-nowrap ${
+        className={`flex items-center gap-2 text-neutral-400 whitespace-nowrap flex-wrap ${
           isPostDetailPage ? "text-sm" : "text-xs @md:text-sm"
         }`}
       >

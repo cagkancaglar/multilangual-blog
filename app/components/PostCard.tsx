@@ -11,30 +11,28 @@ interface PostProps {
 
 const PostCard = ({ post, layout = "horizontal", reverse }: PostProps) => {
   return (
-    <div>
-      <Link
-        className={`@container ${
-          layout === "horizontal"
-            ? "grid md:grid-cols-2 gap-10 items-center"
-            : "space-y-2"
+    <Link
+      className={`@container ${
+        layout === "horizontal"
+          ? "grid md:grid-cols-2 gap-10 items-center"
+          : "space-y-10"
+      }`}
+      href={`/post/${post.slug}`}
+    >
+      {/* image */}
+      <Image
+        className={`rounded-md w-full object-cover object-center max-h-[300px] h-full ${
+          reverse ? "md:order-last" : ""
         }`}
-        href={`/post/${post.slug}`}
-      >
-        {/* image */}
-        <Image
-          className={`rounded-md w-full object-cover object-center max-h-[300px] h-full ${
-            reverse ? "md:order-last" : ""
-          }`}
-          src={post.image}
-          width={600}
-          height={300}
-          alt={post.title}
-          priority
-        />
-        {/* content */}
-        <PostContent post={post} />
-      </Link>
-    </div>
+        src={post.image}
+        width={600}
+        height={300}
+        alt={post.title}
+        priority
+      />
+      {/* content */}
+      <PostContent post={post} />
+    </Link>
   );
 };
 
